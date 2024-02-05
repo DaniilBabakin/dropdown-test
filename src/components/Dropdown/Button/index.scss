@@ -1,0 +1,45 @@
+.dropdown__button {
+  position: relative;
+  width: 240px;
+  height: 34px;
+
+  background: rgba(52, 196, 246, 0.1);
+  
+  // Text
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #BAC1CC;
+
+  // Border с градиентом
+  border: none;
+  border-radius: 4px;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px; 
+    padding: 1px; 
+    opacity: 0.7;
+    background:linear-gradient(to right, rgba(84,244,223,1) 0%, rgba(42,182,253,1) 100%);
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+
+    transition: 0.3s ease-in-out opacity;
+  }
+
+  // Misc
+  cursor: pointer;
+  transition: 0.3s ease-in-out background;
+
+  &:hover{
+    background: rgba(52, 198, 246, 0.196);
+
+    &::before{
+      opacity: 1;
+    }
+  }
+}
